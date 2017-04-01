@@ -1,0 +1,34 @@
+Create a HOOK.IO account : 
+
+Add gettwiml.js code to the gettwml microservice 
+Add sendmessage.js to sendmessage 
+
+Things to note:
+----------------
+   
+1. In the ask/src/index.js , Under Message Intent, change the url to point to the right microservice
+
+var url = "https://hook.io/vijayvikram11844/sendmessage?text=" + encodeURIComponent(message) + "&number=" + name + "&messagetype=" + messageType;
+
+ 
+2. In the microservice/sendmessage.js Add the '+' to the contact list numbers - as it did not work for me without it
+   
+   ...
+   var contactlist = [
+     	{name: 'john', number: '+65xxxxxxxx'},
+       	{name: 'office', number: '+65xxxxxxxx'},
+ 		// ...
+ 	];
+   ...
+   var twilioNumber = '+xxxxxxxxxx';
+ 	
+   2. In the section 
+   
+   ...
+   if(telnumber != undefined){
+       	var client = require('twilio')('your auth sid', 'your auth token');
+       ...
+      url: 'https://hook.io/vijayvikram11844/gettwml?text=' + encodeURIComponent(message) // replace the url with your hook.io path
+                     }, ...
+
+
