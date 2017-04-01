@@ -1,4 +1,7 @@
-Puth both gettwiml.js and sendmessage.js together in the hook.io microservice under your endpoint
+Create a HOOK.IO account : 
+Add gettwiml.js code to the gettwml microservice 
+Add sendmessage.js to sendmessage 
+
 
 Things to note:
 ----------------
